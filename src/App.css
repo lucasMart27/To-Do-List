@@ -1,0 +1,16 @@
+body{
+  font-family: Arial;
+  background-color: #f4f4f4;
+  padding: 30px;
+  color:#333;
+  background-image: url(./img/bg.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.app{
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #efefef;
+  padding: 20px 30px;
+}
