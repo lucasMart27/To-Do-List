@@ -1,6 +1,13 @@
-import React from 'react'
+import {useState} from 'react'
 
 const TodoForm = () => {
+  const [value, setValue]= useState(" ")
+  const [categoryy, setCategory] = useState(" ")
+
+  const handleSubmit =(e) => {
+    e.preventDefault()
+  }
+
   return (
     <div className='todo-form'>
     <h2>Criar tarefas:</h2>
