@@ -9,16 +9,19 @@ const TodoForm = () => {
     if (!value || !categoryy) return;
     console.log(value, categoryy)
     //adicionar todo
-    //li,par os campos
+    setValue("");
+    setCategory("");
   }
 
   return (
     <div className='todo-form'>
     <h2>Criar tarefas:</h2>
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder='Digite o título' onChange={(e) => setValue(e.target.value)}/>
+      <input type="text" placeholder='Digite o título'
+      value={value}
+      onChange={(e) => setValue(e.target.value)}/>
 
-      <select onChange={(e) => setCategory(e.target.value)}>
+      <select value={categoryy} onChange={(e) => setCategory(e.target.value)}>
         <option value=""> Selecione uma categoria</option>
         <option value="Trabalho">Trabalho</option>
         <option value="Pessoal">Pessoal</option>
