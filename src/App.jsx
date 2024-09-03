@@ -39,7 +39,9 @@ function App() {
         isCompleted:false,
       }
     ]
+    setTodos(newTodos);
   }
+
   
 
   return (
