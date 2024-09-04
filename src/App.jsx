@@ -54,7 +54,7 @@ function App() {
 
       ))}
     </div>
-    <TodoForm/>
+    <TodoForm addTodo={addTodo}/>
     </div>
   )
 }
