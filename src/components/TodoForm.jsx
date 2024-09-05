@@ -8,7 +8,9 @@ const TodoForm = ({addTodo}) => {
     e.preventDefault()
     if (!value || !category) return;
     console.log(value, category)
-    addTodo(!value || !category)
+
+    addTodo(value, category)
+
     setValue("");
     setCategory("");
   }
