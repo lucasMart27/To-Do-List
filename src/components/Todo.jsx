@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Todo = ({todo, removeTodo}) => {
   return (
@@ -9,10 +9,12 @@ const Todo = ({todo, removeTodo}) => {
           </div>
           <div>
           <button className='complete'>Completar</button>
-          <button className='remove' onClick={() => removeTodo}>x</button>
+          <button className='remove' onClick={() => removeTodo(todo.id)}>
+            x
+            </button>
           </div>
         </div>
   )
 }
 
-export default Todo
+export default Todo;
