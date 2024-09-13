@@ -49,6 +49,11 @@ function App() {
     setTodos(filteredTodos)
   }
 
+  const completeTodo = (id) => {
+    const newTodos = [...todos]
+    newTodos.map((todo)) => todo.id === id ? todo.isCompleted = !todo.isCompleted
+  }
+
   
 
   return (
