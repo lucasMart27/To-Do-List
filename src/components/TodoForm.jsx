@@ -1,12 +1,15 @@
 import {useState} from 'react'
 
 const TodoForm = ({addTodo}) => {
-  const [value, setValue]= useState(" ")
-  const [category, setCategory] = useState(" ")
+  const [value, setValue] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleSubmit =(e) => {
     e.preventDefault()
-    if (!value || !category) return;
+    if (!value || !category) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
     console.log(value, category)
 
     addTodo(value, category)
