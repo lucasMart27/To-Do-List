@@ -1,9 +1,7 @@
-/* eslint-disable react/jsx-key */
 import { useState } from 'react'
 
 import Todo from './components/Todo';
 import TodoForm from './components/TodoForm';
-
 
 import "./App.css";
 
@@ -17,7 +15,7 @@ function App() {
     },
     {
       id: 2,
-      text: "Ir para a acdemia",
+      text: "Ir para a academia",
       category:"Pessoal",
       isCompleted: false,
     },
@@ -27,48 +25,49 @@ function App() {
       category:"Estudos",
       isCompleted: false,
     },
-  ])
+  ]);
 
   const addTodo = (text, category) => {
     const newTodos = [
       ...todos,
       {
-        id: Math.floor(Math.random() *1000),
+        id: Math.floor(Math.random() * 1000),
         text,
         category,
-        isCompleted:false,
-      }
-    ]
+        isCompleted: false,
+      },
+    ];
     setTodos(newTodos);
-  }
+  };
 
   const removeTodo = (id) => {
-    const newTodos = [...todos]
-    const filteredTodos = newTodos.filter(todo => todo.id  !== id ? todo : null
-    )
-    setTodos(filteredTodos)
-  }
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
 
   const completeTodo = (id) => {
-    const newTodos = [...todos]
-    newTodos.map((todo)) => todo.id === id ? todo.isCompleted = !todo.isCompleted
-  }
-
-  
+    const newTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+    );
+    setTodos(newTodos);
+  };
 
   return (
     <div className="app">
       <h1>Listas de Tarefas</h1>
       <div className="todo-list">
-      {todos.map((todo) =>(
-       
-         <Todo key={todo.id} todo={todo} removeTodo={removeTodo} />
-
-      ))}
+        {todos.map((todo) => (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            removeTodo={removeTodo}
+            completeTodo={completeTodo}
+          />
+        ))}
+      </div>
+      <TodoForm addTodo={addTodo} />
     </div>
-    <TodoForm addTodo={addTodo}/>
-    </div>
-  )
+  );
 }
 
-export default App
+export default App;
