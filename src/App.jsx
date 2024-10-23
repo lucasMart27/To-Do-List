@@ -51,6 +51,7 @@ function App() {
     );
     setTodos(newTodos);
   };
+  
 
   return (
     <div className="app">
@@ -62,6 +63,7 @@ function App() {
             todo={todo}
             removeTodo={removeTodo}
             completeTodo={completeTodo}
+
           />
         ))}
       </div>
